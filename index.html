@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+
+<style>
+
+  *{ padding:0px;margin:0px;}
+
+input[type="checkbox"]
+{
+ width:600px; 
+ height:60px;
+}
+
+#i1
+{
+  position:relative;
+ top:-950px;
+ left:-200px;
+}
+
+#i2
+{
+  position:relative;
+ top:-1020px;
+ left:130px;
+}
+
+#i3
+{
+  position:relative;
+ top:-1080px;
+left:480px;
+}
+
+
+#i4
+{
+  position:relative;
+ top:-850px;
+ left:-200px;
+}
+
+#i5
+{
+  position:relative;
+ top:-910px;
+ left:130px;
+}
+
+#i6
+{
+  position:relative;
+ top:-980px;
+left:480px;
+}
+.d1
+{
+ width:1000px;
+ height:1200px;
+ background-color:yellow;
+ display:flex;
+ flex-direction:column;
+ flex-wrap:wrap;
+ justify-content:space-evenly;
+ 
+ 
+}
+
+#as
+{
+ color:red;
+}
+
+#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12
+{
+ width:300px;
+ height:250px;
+ border:2px solid black;
+}
+
+.asp1
+{
+ background-image:url("sun.png");
+ background-size:contain;
+}
+.asp2
+{
+ background-image:url("moon.png");
+ background-size:contain;
+}
+.asp3
+{
+ background-image:url("city.png");
+ background-size:contain;
+}
+
+
+#sub
+{
+ width:400px;
+ height:50px;
+ color:black;
+ background-color:lime;
+ border-radius:20%;
+ font-size:40px;
+ position:relative;
+ top:-300px;
+ left:300px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="d1">
+ 
+<div id="a1"></div>
+<div id="a2"></div>
+<div id="a3"></div>
+<div id="a4"></div>
+<div id="a5"></div>
+<div id="a6"></div>
+
+<div id="a7"></div>
+<div id="a8"></div>
+<div id="a9"></div>
+<div id="a10"></div>
+<div id="a11"></div>
+<div id="a12"></div>
+</div>
+ <input type="checkbox" id="i1" />
+ <input type="checkbox" id="i2" />
+ <input type="checkbox" id="i3" />
+ <input type="checkbox" id="i4" />
+ <input type="checkbox" id="i5" />
+ <input type="checkbox" id="i6" />
+
+ <input type="checkbox" id="i7" />
+ <input type="checkbox" id="i8" />
+ <input type="checkbox" id="i9" />
+ <input type="checkbox" id="i10" />
+ <input type="checkbox" id="i11" />
+ <input type="checkbox" id="i12" />
+ <input id="sub" type="submit" onclick="che()"/>
+<h1 id="as"> </h1>
+
+<script>
+
+
+var w1=document.getElementById("a1");
+var w2=document.getElementById("a2");
+var w3=document.getElementById("a3");
+var w4=document.getElementById("a4");
+var w5=document.getElementById("a5");
+var w6=document.getElementById("a6");
+
+ var a =document.getElementById("i1");
+ var b =document.getElementById("i2");
+ var c =document.getElementById("i3");
+ var d =document.getElementById("i4");
+ var e =document.getElementById("i5");
+ var f =document.getElementById("i6");
+ var count=0;
+function che()
+{
+ 
+var g =document.getElementById("as");
+g.innerHTML=count;
+if(a.checked && e.checked)
+{
+  
+ w1.classList.add("asp1");
+ w4.classList.add("asp1");
+ 
+ count++;
+  g.innerHTML=count;
+}
+else if(b.checked && f.checked)
+{
+  
+ w3.classList.add("asp2");
+ w6.classList.add("asp2");
+  count++;
+  g.innerHTML=count;
+}
+else if(c.checked && d.checked)
+{
+ w2.classList.add("asp3");
+ w4.classList.add("asp3");
+  count++;
+  g.innerHTML=count;
+}
+else if(a.checked || b.checked)
+{
+  alert("choose its match");
+}
+else if(c.checked || d.checked)
+{
+  alert("choose its match");
+}
+else if(e.checked || f.checked)
+{
+  alert("choose its match");
+}
+else
+{
+ alert("choose smtg");
+ count--;
+ g.innerHTML=count;
+
+}
+}
+</script>
+</body>
+
+</html>
